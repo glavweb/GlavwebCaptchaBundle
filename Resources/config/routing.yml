@@ -1,0 +1,3 @@
+glavweb_captcha.generate_captcha:
+    path:           /generate-captcha/{token}
+    defaults:       { _controller: GlavwebCaptchaBundle:Captcha:generateCaptcha }

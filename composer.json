@@ -1,0 +1,26 @@
+{
+    "name": "glavweb/captcha-bundle",
+    "description": "Symfony GlavwebCaptchaBundle",
+    "authors": [
+        {
+            "name": "nilov",
+            "email": "nilov@glavweb.ru",
+            "homepage": "http://glavweb.ru"
+        },
+        {
+            "name": "GLAVWEB Community",
+            "homepage": "https://github.com/glavweb/GlavwebCaptchaBundle/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "symfony/framework-bundle": "~2.3|~3.0",
+        "symfony/form": "~2.3|~3.0",
+        "doctrine/orm": "^2.5",
+        "doctrine/doctrine-bundle": "^1.6",
+        "gregwar/captcha": "~1.1"
+    },
+    "autoload": {
+        "psr-4": { "Glavweb\\CaptchaBundle\\": "" }
+    }
+}

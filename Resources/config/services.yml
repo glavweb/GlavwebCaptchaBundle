@@ -1,0 +1,31 @@
+services:
+    glavweb_captcha.generator:
+        class: Glavweb\CaptchaBundle\Generator\CaptchaGenerator
+        arguments:
+            - "@router"
+            - "@glavweb_captcha.captcha_builder"
+            - "@glavweb_captcha.phrase_builder"
+            - "@glavweb_captcha.image_file_handler"
+
+    glavweb_captcha.image_file_handler:
+        class: Glavweb\CaptchaBundle\Generator\ImageFileHandler
+        arguments:
+            - "%glavweb_captcha.config.image_folder%"
+            - "%glavweb_captcha.config.web_path%"
+            - "%glavweb_captcha.config.gc_freq%"
+            - "%glavweb_captcha.config.expiration%"
+
+    glavweb_captcha.captcha_builder:
+        class: Gregwar\Captcha\CaptchaBuilder
+
+    glavweb_captcha.phrase_builder:
+        class: Gregwar\Captcha\PhraseBuilder
+
+    glavweb_captcha.validator.true:
+            class: Glavweb\CaptchaBundle\Validator\Constraints\IsTrueValidator
+            arguments:
+                - "%glavweb_captcha.enabled%"
+                - "@doctrine"
+                - "@request_stack"
+            tags:
+                - { name: validator.constraint_validator, alias: "glavweb_captcha.true" }
