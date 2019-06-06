@@ -14,11 +14,11 @@
     ],
     "require": {
         "php": ">=7.1",
-        "symfony/framework-bundle": "~2.3|~3.0",
-        "symfony/form": "~2.3|~3.0",
+        "symfony/framework-bundle": "^3.4|^4.0",
+        "symfony/form": "^3.4|^4.0",
         "doctrine/orm": "^2.5",
-        "doctrine/doctrine-bundle": "^1.6",
-        "gregwar/captcha": "~1.1"
+        "doctrine/doctrine-bundle": "^1.8",
+        "gregwar/captcha": "^1.1"
     },
     "autoload": {
         "psr-4": { "Glavweb\\CaptchaBundle\\": "" }
